@@ -111,8 +111,14 @@ void print_register_machine(RegMachine *machine)
 
 int main () 
 {
-    Create_Register_Machine_Program(regM, DEC(2,2,0), INC(1,1));
-    Initial_Memory_Layout(regM, 0, 34);
+    Create_Register_Machine_Program(regM, 
+            DEC(1,2,3), 
+            DEC(2,1,4), 
+            DEC(2,6,5),
+            DEC(1,6,5),
+            INC(3,1)
+            );
+    Initial_Memory_Layout(regM, 34, 34);
     while(true)
     {
         print_register_machine(regM);
