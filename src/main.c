@@ -116,14 +116,13 @@ int main ()
             DEC(2,1,4), 
             DEC(2,6,5),
             DEC(1,6,5),
-            INC(3,1)
+            INC(3,6)
             );
-    Initial_Memory_Layout(regM, 34, 34);
-    while(true)
+    Initial_Memory_Layout(regM, 34, 34, 0);
+    while(regM->index < regM->instct)
     {
-        print_register_machine(regM);
         step_register_machine(regM);
-        getchar();
     }
+    print_register_machine(regM);
     return EXIT_SUCCESS;
 }
